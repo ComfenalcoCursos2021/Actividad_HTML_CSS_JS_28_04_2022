@@ -1,3 +1,156 @@
 :root{
-    --i: red;
+    --colorFondo: #383973;
+    --colorRecuadro: #664E88;
+    --colorIconos: #fff;
+    --colorIconosActiva: #8774A3;
+    --colorIconoHover: #B3C267;
+    --tamañoCaja: 70px;
+    --tamañoCajaActiva: 250px;
+    --tamañoIconos: 7px;
+    --tamañoIconosActiva: 45px;
+    --separacionIconos: 12px;
+    --separacionIconosActiva: 70px;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: var(--colorFondo);
+}
+.navigation{
+    position: relative;
+    width: var(--tamañoCaja);
+    height: var(--tamañoCaja);
+    background: var(--colorRecuadro);
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+    transition-delay: 0.8s;
+}
+.navigation.active{
+    width: var(--tamañoCajaActiva);
+    height: var(--tamañoCajaActiva);
+    transition-delay: 0s;
+}
+/* -----------------------Menu Matriz----------------------- */
+.navigation span{
+    position: absolute;
+    width: var(--tamañoIconos);
+    height: var(--tamañoIconos);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--colorIconos);
+    border-radius: 50%;
+    transition: transform 0.5s, width 0.5s, height 0.5s, background 0.5s;
+}
+.navigation span ion-icon{
+    transition: 0.5s;
+    font-size: 0em;
+}
+.navigation span:nth-child(6){
+    /* background: red; */
+    transform: translate(calc(var(--separacionIconos) * -1),calc(var(--separacionIconos) * -1));
+    transition-delay: calc(0.1s * 6);
+}
+.navigation span:nth-child(3){
+    /* background: red; */
+    transform: translate(calc(var(--separacionIconos) * 0),calc(var(--separacionIconos) * -1));
+    transition-delay: calc(0.1s * 3);
+}
+.navigation span:nth-child(9){
+    /* background: red; */
+    transform: translate(calc(var(--separacionIconos) * 1),calc(var(--separacionIconos) * -1));
+    transition-delay: calc(0.1s * 9);
+}
+.navigation span:nth-child(1){
+    /* background: red; */
+    transform: translate(calc(var(--separacionIconos) * -1),calc(var(--separacionIconos) * 0));
+    transition-delay: calc(0.1s * 1);
+}
+.navigation span:nth-child(7){
+    /* background: red; */
+    transform: translate(calc(var(--separacionIconos) * 0),calc(var(--separacionIconos) * 0));
+    transition-delay: calc(0.1s * 7);
+}
+.navigation span:nth-child(2){
+    /* background: red; */
+    transform: translate(calc(var(--separacionIconos) * 1),calc(var(--separacionIconos) * 0));
+    transition-delay: calc(0.1s * 2);
+}
+.navigation span:nth-child(8){
+    /* background: red; */
+    transform: translate(calc(var(--separacionIconos) * -1),calc(var(--separacionIconos) * 1));
+    transition-delay: calc(0.1s * 8);
+}
+.navigation span:nth-child(4){
+    /* background: red; */
+    transform: translate(calc(var(--separacionIconos) * 0),calc(var(--separacionIconos) * 1));
+    transition-delay: calc(0.1s * 4);
+}
+.navigation span:nth-child(5){
+    /* background: red; */
+    transform: translate(calc(var(--separacionIconos) * 1),calc(var(--separacionIconos) * 1));
+    transition-delay: calc(0.1s * 5);
+}
+/* -------------------------------------------------------- */
+/* -----------------------Menu Matriz Activado----------------------- */
+.navigation.active span{
+    width: var(--tamañoIconosActiva);
+    height: var(--tamañoIconosActiva);
+    background: var(--colorIconosActiva);
+}
+.navigation.active span ion-icon{
+    font-size: 1.35em;
+    color: var(--colorIconos);
+}
+.navigation.active span:nth-child(6){
+    /* background: red; */
+    transform: translate(calc(var(--separacionIconosActiva) * -1),calc(var(--separacionIconosActiva) * -1));
+}
+.navigation.active span:nth-child(3){
+    /* background: red; */
+    transform: translate(calc(var(--separacionIconosActiva) * 0),calc(var(--separacionIconosActiva) * -1));
+}
+.navigation.active span:nth-child(9){
+    /* background: red; */
+    transform: translate(calc(var(--separacionIconosActiva) * 1),calc(var(--separacionIconosActiva) * -1));
+}
+.navigation.active span:nth-child(1){
+    /* background: red; */
+    transform: translate(calc(var(--separacionIconosActiva) * -1),calc(var(--separacionIconosActiva) * 0));
+}
+.navigation.active span:nth-child(7){
+    /* background: red; */
+    transform: translate(calc(var(--separacionIconosActiva) * 0),calc(var(--separacionIconosActiva) * 0));
+}
+.navigation.active span:nth-child(2){
+    /* background: red; */
+    transform: translate(calc(var(--separacionIconosActiva) * 1),calc(var(--separacionIconosActiva) * 0));
+}
+.navigation.active span:nth-child(8){
+    /* background: red; */
+    transform: translate(calc(var(--separacionIconosActiva) * -1),calc(var(--separacionIconosActiva) * 1));
+}
+.navigation.active span:nth-child(4){
+    /* background: red; */
+    transform: translate(calc(var(--separacionIconosActiva) * 0),calc(var(--separacionIconosActiva) * 1));
+}
+.navigation.active span:nth-child(5){
+    /* background: red; */
+    transform: translate(calc(var(--separacionIconosActiva) * 1),calc(var(--separacionIconosActiva) * 1));
+}
+/* -------------------------------------------------------- */
+.navigation.active span:hover ion-icon{
+    color: var(--colorIconoHover);
+    filter: drop-shadow(0 0 2px var(--colorIconoHover)) drop-shadow(0 0 5px var(--colorIconoHover)) drop-shadow(0 0 15px var(--colorIconoHover));
 }
